@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+.sidebar {
+  height: 100%;
+  width: 15rem;
+  float: left;
+  position: fixed;
+  background-color: rgb(239, 239, 239);
+  color: #333;
+}

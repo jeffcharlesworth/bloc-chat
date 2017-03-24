@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+
+
+<section class="roomcontainer">
+  <h1>Bloc Chat</h1>
+  <div ng-repeat="chatroom in rooms.roomsArray track by $index">
+    <p class="roomchoice"> {{ chatroom.$id }} </p>
+  </div>
+</section>
