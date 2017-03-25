@@ -4,7 +4,7 @@
   <div class="sidebarheading">
     <h1>Bloc Chat</h1>
   </div>
-  <button class="newroombtn btn" ng-controller="ModalCtrl as modal" ng-click="open()">
+  <button class="newroombtn btn" ng-controller="ModalCtrl as modal" ng-click="modal.open()">
       New room
   </button>
   <div ng-repeat="chatroom in rooms.roomsArray track by $index">

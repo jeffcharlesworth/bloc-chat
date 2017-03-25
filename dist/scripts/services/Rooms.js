@@ -7,10 +7,12 @@
     var Rooms = {
       all: chatRooms,
       create: function(newRoomName) {
-        console.log(newRoomName);
-        chatRooms.$add(newRoomName);
+        return chatRooms.$add(newRoomName).then(function(ref) {
+          var id = ref.key();
+          console.log("added record with id " + id);
+          list.$indexFor(id); // returns location in the array
+        });
       }
-
     };
 
     Rooms.newChatRoomName = "";
@@ -18,12 +20,6 @@
     Rooms.array = function() {
       return chatRooms;
     };
-
-    Rooms.json = function() {
-    return {
-      all: chatRooms
-    }
-   };
 
   return Rooms;
 }

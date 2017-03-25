@@ -1,11 +1,11 @@
 (function() {
-  function RoomsCtrl(Rooms, $scope, $uibModal, Modal) {
+  function RoomsCtrl(Rooms, $scope, $uibModal) {
     this.roomsArray = Rooms.all;
-    this.new = Rooms.create;
+    $scope.new = Rooms.create;
     };
 
 
   angular
     .module('blocChat')
-    .controller('RoomsCtrl', ['Rooms', '$scope', '$uibModal', 'Modal', RoomsCtrl]);
+    .controller('RoomsCtrl', ['Rooms', '$scope', '$uibModal', RoomsCtrl]);
 })();

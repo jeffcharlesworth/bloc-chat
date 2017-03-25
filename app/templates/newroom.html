@@ -1,5 +1,3 @@
-
-<script type="text/ng-template" id="newroom.html">
   <div class="modalcontainer">
     <h2 class="roominputheading">Create new room</h2>
     <form>
@@ -7,8 +5,7 @@
       <input class="roominput form-control" type="text" ng-model="newChatRoomName" />
     </form>
       <div class="modal-footer">
-        <button class="btn" type="button" ng-controller="RoomsCtrl as rooms" ng-click="rooms.new(newChatRoomName)">OK</button>
+        <button class="btn" type="button" ng-controller="RoomsCtrl as rooms" ng-click="new(newChatRoomName)">OK</button>
         <button class="btn" type="button" ng-click="cancel()">Cancel</button>
       </div>
-    </script>
   </div>

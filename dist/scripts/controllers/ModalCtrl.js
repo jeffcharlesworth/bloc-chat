@@ -1,21 +1,16 @@
 (function() {
-  function ModalCtrl ($scope, Modal, $uibModal) {
-    $scope.open  = function () {
-      $uibModal.open({
-          animation: true,
-          controller: 'MyModalCtrl',
-          size: "sm",
-          templateUrl: 'templates/newroom.html',
-          component: "myModal"
-        });
-      };
+  function ModalCtrl ($scope, $uibModal) {
 
-      $scope.close = function () {
-        $uibModalWindow.close();
+      this.open  = function() {
+        $uibModal.open({
+          templateUrl: 'templates/newroom.html',
+          size: 'sm',
+          controller: ModalCtrl
+        });
       }
     }
 
   angular
     .module('blocChat')
-    .controller('ModalCtrl', ['$scope', 'Modal', '$uibModal', 'Rooms', ModalCtrl]);
+    .controller('ModalCtrl', ['$scope','$uibModal', 'Rooms', ModalCtrl]);
 })();

@@ -7,10 +7,8 @@
     var Rooms = {
       all: chatRooms,
       create: function(newRoomName) {
-        console.log(newRoomName);
-        chatRooms.$add(newRoomName);
+        return chatRooms.$add(newRoomName);
       }
-
     };
 
     Rooms.newChatRoomName = "";
@@ -18,12 +16,6 @@
     Rooms.array = function() {
       return chatRooms;
     };
-
-    Rooms.json = function() {
-    return {
-      all: chatRooms
-    }
-   };
 
   return Rooms;
 }
