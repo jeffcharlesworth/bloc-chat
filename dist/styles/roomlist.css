@@ -1,6 +1,40 @@
-.roomcontainer {
-  padding-left: 3rem;
+.sidebar {
+  height: 100%;
+  min-width: 25rem;
+  float: left;
+  position: fixed;
+  background-color: rgb(239, 239, 239);
+  color: #333;
+}
+
+.sidebarheading {
+  display: inline-block;
+  margin: auto;
+  padding-left: 2rem;
+}
+
+.sidebarheading h1 {
+  font-size: 2.5rem;
+}
+
+.modalcontainer {
+  padding: 2rem;
 }
 .roomchoice {
-  
+  text-align: center;
+}
+.newroombtn {
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0px 0px 3px 1px #888888;
+  margin-left: 1rem;
+}
+.newroombtn p {
+  margin: auto;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  vertical-align: middle;
+  font-size: 1.1rem;
+}
+.roominputheading {
+  text-align: center;
 }

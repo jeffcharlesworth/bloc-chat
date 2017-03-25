@@ -1,8 +1,13 @@
 
 
 <section class="roomcontainer">
-  <h1>Bloc Chat</h1>
+  <div class="sidebarheading">
+    <h1>Bloc Chat</h1>
+  </div>
+  <button class="newroombtn btn" ng-controller="ModalCtrl as modal" ng-click="open()">
+      New room
+  </button>
   <div ng-repeat="chatroom in rooms.roomsArray track by $index">
-    <p class="roomchoice"> {{ chatroom.$id }} </p>
+    <p class="roomchoice"> {{ chatroom.$value }} </p>
   </div>
 </section>

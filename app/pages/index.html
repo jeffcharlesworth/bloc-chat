@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/roomlist.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
   <div class="sidebar">
@@ -15,6 +16,10 @@
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+
   <script>
     // Initialize Firebase
     var config = {
@@ -29,5 +34,22 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/services/Rooms.js"></script>
   <script src="scripts/controllers/RoomsCtrl.js"></script>
+  <script src="scripts/services/Modal.js"></script>
+  <script src="scripts/controllers/ModalCtrl.js"></script>
+
+  <script type="text/ng-template" id="newroom.html">
+    <div class="modalcontainer">
+      <h2 class="roominputheading">Create new room</h2>
+      <form>
+        <p>Enter room name</p>
+        <input class="roominput form-control" type="text" ng-model="newChatRoomName" />
+      </form>
+        <div class="modal-footer">
+          <button class="btn" type="button" ng-controller="RoomsCtrl as rooms" ng-click="rooms.new(newChatRoomName)">OK</button>
+          <button class="btn" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+      </script>
+    </div>
+
 </body>
 </html>
