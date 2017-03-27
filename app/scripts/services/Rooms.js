@@ -7,7 +7,9 @@
     var Rooms = {
       all: chatRooms,
       create: function(newRoomName) {
-        return chatRooms.$add(newRoomName);
+        newRoomObj = newRoomName;
+        console.log(newRoomObj);
+        chatRooms.$add(newRoomObj);
       }
     };
 

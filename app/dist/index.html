@@ -24,6 +24,8 @@
       messagingSenderId: "719359631512"
     };
     firebase.initializeApp(config);
+    var ref = firebase.database().ref().child("rooms");
+    var chatRooms = $firebaseArray(ref);
   </script>
   <script src="scripts/app.js"></script>
 </body>

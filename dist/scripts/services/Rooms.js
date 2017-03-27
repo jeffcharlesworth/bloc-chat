@@ -7,11 +7,9 @@
     var Rooms = {
       all: chatRooms,
       create: function(newRoomName) {
-        return chatRooms.$add(newRoomName).then(function(ref) {
-          var id = ref.key();
-          console.log("added record with id " + id);
-          list.$indexFor(id); // returns location in the array
-        });
+        newRoomObj = newRoomName;
+        console.log(newRoomObj);
+        chatRooms.$add(newRoomObj);
       }
     };
 
