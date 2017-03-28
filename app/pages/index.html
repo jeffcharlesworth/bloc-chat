@@ -9,9 +9,18 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-  <div class="sidebar">
-    <ui-view></ui-view>
-  </div>
+    <div class="sidebar">
+      <ui-view></ui-view>
+    </div>
+    <section class="roomcontainer">
+      <div ng-controller="MessageCtrl">
+        <h2 class="roomheading">{{ currentRoom }}</h2>
+        <div ng-repeat="message in messagesArray ">
+          <p class="roomusername">{{ message.username }}</p>
+          <p class="roommessage">{{ message.content }}</p>
+        </div>
+      </div>
+    </section>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -32,22 +41,9 @@
   </script>
   <script src="scripts/app.js"></script>
   <script src="scripts/services/Rooms.js"></script>
+  <script src="scripts/services/Messages.js"></script>
   <script src="scripts/controllers/RoomsCtrl.js"></script>
   <script src="scripts/controllers/ModalCtrl.js"></script>
-
-  <script type="text/ng-template" id="newroom.html">
-    <div class="modalcontainer">
-      <h2 class="roominputheading">Create new room</h2>
-      <form>
-        <p>Enter room name</p>
-        <input class="roominput form-control" type="text" ng-model="newChatRoomName" />
-      </form>
-        <div class="modal-footer">
-          <button class="btn" type="button" ng-controller="RoomsCtrl as rooms" ng-click="rooms.new(newChatRoomName)">OK</button>
-          <button class="btn" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-      </script>
-    </div>
-
+  <script src="scripts/controllers/MessageCtrl.js"></script>
 </body>
 </html>

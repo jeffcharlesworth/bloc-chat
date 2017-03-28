@@ -1,10 +1,13 @@
 .sidebar {
   height: 100%;
-  min-width: 25rem;
-  float: left;
-  position: fixed;
+  min-width: 30rem;
+  max-width: 30rem;
+  left: 0;
+  top: 0;
+  position: relative;
   background-color: rgb(239, 239, 239);
   color: #333;
+  float: left;
 }
 
 .sidebarheading {
@@ -15,6 +18,7 @@
 
 .sidebarheading h1 {
   font-size: 2.5rem;
+  margin-top: 0px;
 }
 
 .modalcontainer {
@@ -22,6 +26,16 @@
 }
 .roomchoice {
   text-align: center;
+  color: #333;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  vertical-align: middle;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.roomchoice:hover {
+  text-decoration: none;
 }
 .newroombtn {
   background-color: rgb(247, 247, 247);
@@ -37,4 +51,25 @@
 }
 .roominputheading {
   text-align: center;
+}
+.roomcontainer {
+  position: relative;
+  float: left;
+  top: 3rem;
+  margin-left: 3rem;
+}
+.roomheading {
+  margin-top: 0px;
+  padding-bottom: 3rem;
+
+}
+.roomusername {
+  font-weight: bold;
+}
+.clearfix::before, .clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
 }

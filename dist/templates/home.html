@@ -8,6 +8,6 @@
       New room
   </button>
   <div ng-repeat="chatroom in rooms.roomsArray track by $index">
-    <p class="roomchoice"> {{ chatroom.$value }} </p>
+    <a class="roomchoice" ng-controller="MessageCtrl" ng-click="getByRoomId(chatroom.$id, chatroom.$value)"> {{ chatroom.$value }} </a>
   </div>
 </section>
