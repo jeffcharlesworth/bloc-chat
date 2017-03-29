@@ -1,8 +1,0 @@
-
-<div class="roomContainer" ng-controller="RoomsCtrl as chatroominstance" ng-show="currentRoomActive">
-  <h2 class="roomheading">{{ currentRoom.$value }}</h2>
-    <div ng-repeat=messages in chatroominstance.messages>
-      <p class="roomusername">{{chatroominstance.messages.username}}</p>
-      <p class="roommessage">{{chatroominstance.messages.content}}</p>
-    </div>
-</div>

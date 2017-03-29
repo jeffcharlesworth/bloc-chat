@@ -9,15 +9,16 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar" ng-hide="!currentUser">
       <ui-view></ui-view>
     </div>
-    <section class="roomcontainer">
+    <section class="roomcontainer" ng-hide="!currentUser">
       <div ng-controller="MessageCtrl">
         <h2 class="roomheading">{{ currentRoom }}</h2>
         <div ng-repeat="message in messagesArray ">
           <p class="roomusername">{{ message.username }}</p>
           <p class="roommessage">{{ message.content }}</p>
+          <p class="roommessage">{{ message.sentAt }}</p>
         </div>
       </div>
     </section>
@@ -27,6 +28,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -45,5 +47,6 @@
   <script src="scripts/controllers/RoomsCtrl.js"></script>
   <script src="scripts/controllers/ModalCtrl.js"></script>
   <script src="scripts/controllers/MessageCtrl.js"></script>
+  <script src="scripts/controllers/UsernameCtrl.js"></script>
 </body>
 </html>

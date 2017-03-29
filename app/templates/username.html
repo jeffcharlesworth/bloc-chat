@@ -1,0 +1,14 @@
+  <div class="modalcontainer">
+    <h2 class="roominputheading">Set a username</h2>
+    <form>
+      <p>This name will appear when you send messages</p>
+      <ul>
+        <li>Do not use whitespace</li>
+        <li>Username must contain four or more characters</li>
+      </ul>
+      <input class="roominput form-control" type="text" ng-model="username"/>
+    </form>
+      <div class="modal-footer" ng-controller="UsernameCtrl">
+        <button class="btn" type="button" ng-click="setUsername(username)">OK</button>
+      </div>
+  </div>
