@@ -12,14 +12,20 @@
     <div class="sidebar" ng-hide="!currentUser">
       <ui-view></ui-view>
     </div>
-    <section class="roomcontainer" ng-hide="!currentUser">
-      <div ng-controller="MessageCtrl">
-        <h2 class="roomheading">{{ currentRoom }}</h2>
-        <div ng-repeat="message in messagesArray ">
-          <p class="roomusername">{{ message.username }}</p>
-          <p class="roommessage">{{ message.content }}</p>
-          <p class="roommessage">{{ message.sentAt }}</p>
+    <section class="messagecontainer" ng-controller="MessageCtrl" ng-hide="!currentUser">
+      <h2 class="roomheading">{{ currentRoom }}</h2>
+      <div class="messagelist">
+        <div>
+          <div ng-repeat="message in messagesArray ">
+            <p class="roomusername">{{ message.username }}</p>
+            <p class="roommessage">{{ message.content }}</p>
+            <p class="roommessage">{{ message.sentAt }}</p>
+          </div>
         </div>
+      </div>
+      <div class="messageinputcontainer">
+        <input class="messageinput" type="text" ng-model="messageContent" />
+        <button class="messagebtn" ng-click="send(messageContent)">Send</button>
       </div>
     </section>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
