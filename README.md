@@ -1,6 +1,6 @@
-## Bloc-chat
+## Invisachat
 Can be viewed:
-https://bloc-chat-jc.herokuapp.com/
+https://invisachat.herokuapp.com/
 
 ## Installation
 This project is written in Javascript, Angular, HTML5 and CSS
